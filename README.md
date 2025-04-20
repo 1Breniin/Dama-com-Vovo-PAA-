@@ -43,3 +43,5 @@ Para compilar o programa, utilize o seguinte comando no terminal:
 
 ```bash
 make
+
+./tp1 -i entrada.txt
