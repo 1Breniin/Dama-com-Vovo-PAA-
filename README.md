@@ -1,4 +1,4 @@
-# Jogo de Damas com Estratégias de Força Bruta e Otimizada
+# # Dama com Vovô 🧓♟️  com Estratégias de Força Bruta e Otimizada
 
 Este projeto implementa um jogo de **Damas** com duas estratégias para capturar peças: uma **estratégia de força bruta** e uma **estratégia otimizada**. O código simula um jogo de damas onde o jogador tenta capturar o maior número de peças adversárias possível, usando duas abordagens de cálculo de movimentos.
 
@@ -45,3 +45,5 @@ Para compilar o programa, utilize o seguinte comando no terminal:
 make
 
 ./tp1 -i entrada.txt
+
+
