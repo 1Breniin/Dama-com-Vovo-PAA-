@@ -33,24 +33,36 @@ int main(int argc, char *argv[]) {
     Tabuleiro tab;
     
   
-    while (ler_entrada(fp, &tab)) { // Lê a entrada e processa cada caso de teste
-        struct timeval start, end;
-        struct rusage usage_start, usage_end;
-
-        gettimeofday(&start, NULL);
-        getrusage(RUSAGE_SELF, &usage_start);
-
-        int resultado1 = estrategia_forca_bruta(&tab);
-        int resultado2 = estrategia_otimizada(&tab);
-
-        gettimeofday(&end, NULL);
-        getrusage(RUSAGE_SELF, &usage_end);
-
-        printf("%d\n", resultado1 > resultado2 ? resultado1 : resultado2);
-        imprimir_tempos(start, end, usage_start, usage_end);
-
+    while (ler_entrada(fp, &tab)) {
+        struct timeval start_fb, end_fb, start_opt, end_opt;
+        struct rusage usage_start_fb, usage_end_fb, usage_start_opt, usage_end_opt;
+    
+        // Força Bruta
+        gettimeofday(&start_fb, NULL);
+        getrusage(RUSAGE_SELF, &usage_start_fb);
+        int resultado_fb = estrategia_forca_bruta(&tab);
+        gettimeofday(&end_fb, NULL);
+        getrusage(RUSAGE_SELF, &usage_end_fb);
+    
+        // Otimizada
+        gettimeofday(&start_opt, NULL);
+        getrusage(RUSAGE_SELF, &usage_start_opt);
+        int resultado_opt = estrategia_otimizada(&tab);
+        gettimeofday(&end_opt, NULL);
+        getrusage(RUSAGE_SELF, &usage_end_opt);
+    
+        // Impressão dos resultados
+        printf("Força Bruta: %d peças capturadas\n", resultado_fb);
+        imprimir_tempos(start_fb, end_fb, usage_start_fb, usage_end_fb);
+        printf("\n");
+    
+        printf("Otimizada: %d peças capturadas\n", resultado_opt);
+        imprimir_tempos(start_opt, end_opt, usage_start_opt, usage_end_opt);
+        printf("---------------------------\n");
+    
         liberar_tabuleiro(&tab);
     }
+    
 
     // Fecha os arquivos
     fclose(saida);

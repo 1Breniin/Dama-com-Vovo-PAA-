@@ -10,10 +10,11 @@ typedef struct {
     int **matriz;  // Matriz que representa o tabuleiro
 } Tabuleiro;
 
-// Função para ler o estado do jogo a partir do arquivo
 int ler_entrada(FILE *fp, Tabuleiro *tab);
 
-// Função para liberar a memória do tabuleiro
+Tabuleiro copiar_tabuleiro(Tabuleiro *orig);
+
 void liberar_tabuleiro(Tabuleiro *tab);
+
 
 #endif
