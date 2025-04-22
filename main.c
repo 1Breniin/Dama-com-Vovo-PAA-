@@ -28,11 +28,8 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     
-    freopen("saida.txt", "w", stdout);  
-
     Tabuleiro tab;
     
-  
     while (ler_entrada(fp, &tab)) {
         struct timeval start_fb, end_fb, start_opt, end_opt;
         struct rusage usage_start_fb, usage_end_fb, usage_start_opt, usage_end_opt;
@@ -51,12 +48,14 @@ int main(int argc, char *argv[]) {
         gettimeofday(&end_opt, NULL);
         getrusage(RUSAGE_SELF, &usage_end_opt);
     
-        // Impressão dos resultados
-        printf("Força Bruta: %d peças capturadas\n", resultado_fb);
+        // Impressão dos resultados no arquivo de saída
+        fprintf(saida, "%d\n", resultado_fb);
+
+        // Impressão dos tempos no terminal
+        printf("---------------------------\n");
+        printf("Força Bruta:\n");
         imprimir_tempos(start_fb, end_fb, usage_start_fb, usage_end_fb);
-        printf("\n");
-    
-        printf("Otimizada: %d peças capturadas\n", resultado_opt);
+        printf("\nOtimizada:\n");
         imprimir_tempos(start_opt, end_opt, usage_start_opt, usage_end_opt);
         printf("---------------------------\n");
     

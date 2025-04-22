@@ -63,33 +63,45 @@
 0 0
 ```
 
-#### Exemplo de Saída
+#### Exemplo de saída no terminal
 
-```txt
-Força Bruta: 1 peças capturadas
+```terminal
+---------------------------
+Força Bruta:
 Tempo de usuário: 0.000002s
 Tempo de sistema: 0.000000s
 
-Otimizada: 1 peças capturadas
+Otimizada:
 Tempo de usuário: 0.000001s
 Tempo de sistema: 0.000000s
 ---------------------------
-Força Bruta: 2 peças capturadas
-Tempo de usuário: 0.000001s
-Tempo de sistema: 0.000000s
+---------------------------
+Força Bruta:
+Tempo de usuário: 0.000000s
+Tempo de sistema: 0.000002s
 
-Otimizada: 2 peças capturadas
-Tempo de usuário: 0.000001s
-Tempo de sistema: 0.000000s
+Otimizada:
+Tempo de usuário: 0.000000s
+Tempo de sistema: 0.000001s
 ---------------------------
-Força Bruta: 7 peças capturadas
-Tempo de usuário: 0.000003s
-Tempo de sistema: 0.000000s
+---------------------------
+Força Bruta:
+Tempo de usuário: 0.000000s
+Tempo de sistema: 0.000003s
 
-Otimizada: 7 peças capturadas
-Tempo de usuário: 0.000002s
-Tempo de sistema: 0.000000s
+Otimizada:
+Tempo de usuário: 0.000000s
+Tempo de sistema: 0.000002s
 ---------------------------
+```
+
+#### Exemplo de saída no txt
+
+```terminal
+1
+2
+7
+
 ```
 
 ## Limpeza
