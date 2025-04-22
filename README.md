@@ -97,7 +97,7 @@ Tempo de sistema: 0.000002s
 
 #### Exemplo de saída no txt
 
-```terminal
+```txt
 1
 2
 7
