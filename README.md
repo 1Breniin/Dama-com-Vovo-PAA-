@@ -101,7 +101,6 @@ Tempo de sistema: 0.000002s
 1
 2
 7
-
 ```
 
 ## Limpeza
